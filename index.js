@@ -214,10 +214,12 @@ Usa un for loop per cambiare il valore della proprietà "gender" di alcuni perso
 */
 
 for (let i = 0; i < starWarsCharacters.length; i++) {
-  if (starWarsCharacters.gender === "n/a") {
-    starWarsCharacters.gender = "robot";
+  if (starWarsCharacters[i].gender === "n/a") {
+    starWarsCharacters[i].gender = "robot";
   }
 }
+
+console.log(starWarsCharacters);
 
 /* EXTRA ESERCIZIO 9
 
