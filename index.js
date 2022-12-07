@@ -125,11 +125,15 @@ console.log(characters);
 */
 
 const femaleCharacters = [];
-const gender = "female";
 
 for (let i = 0; i < starWarsCharacters.length; i++) {
-  if (starWarsCharacters[i].gender === gender) {
-    femaleCharacters.push(starWarsCharacters[i].name);
+  if (starWarsCharacters[i].gender === "female") {
+    const oggetto = {
+      name: starWarsCharacters[i].name,
+      hair_color: starWarsCharacters[i].hair_color,
+      eye_color: starWarsCharacters[i].eye_color,
+    };
+    femaleCharacters.push(oggetto);
   }
 }
 console.log(femaleCharacters);
@@ -139,12 +143,12 @@ console.log(femaleCharacters);
   ognuna di queste proprietà contiene un array vuoto
 */
 
-let eye_color = {
-  blu: [],
+let eyeColor = {
+  blue: [],
   yellow: [],
   brown: [],
   red: [],
-  blueGray: [],
+  ["blue-Gray"]: [],
 };
 
 /* ESERCIZIO 5
@@ -152,6 +156,25 @@ let eye_color = {
   colore dei loro occhi nell'oggetto "eyeColor" precedentemente creato.
   Utilizza uno switch statement per determinare in quale proprietà inserire il personaggio
 */
+
+for (let i = 0; i < starWarsCharacters.length; i++) {
+  switch (starWarsCharacters[i].eye_color) {
+    case "blue":
+      eyeColor.blue.push(starWarsCharacters[i]);
+      break;
+    case "yellow":
+      eyeColor.yellow.push(starWarsCharacters[i]);
+      break;
+    case "brown":
+      eyeColor.brown.push(starWarsCharacters[i]);
+      break;
+    case "red":
+      eyeColor.red.push(starWarsCharacters[i]);
+      break;
+  }
+}
+
+console.log(eyeColor);
 
 /* ESERCIZIO 6
   Usa un while loop per calcolare la massa totale dell'equipaggio
